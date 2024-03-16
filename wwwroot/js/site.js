@@ -1,7 +1,6 @@
 ﻿$(document).ready(function () {
     $("#Imagefile").hide();
     $("#RoomImageFile").hide();
-
     var state = true;
     $("#btn-image").click(function () {
         if (state) {
@@ -28,5 +27,43 @@
         }
         state = !state;
     });
+    $("#IsExtraAdult").change(function () {
+        if ($(this).prop("checked") == false) {
+            $("#AdultRate").prop("disabled", true);
+            $("#AdultRate").val("");
+        }
+        else {
+            $("#AdultRate").prop("disabled", false);
+        }
+    });
+    $("#IsChildAllow").change(function () {
+        if ($(this).prop("checked") == false) {
+            $("#childRate").prop("disabled", true);
+            $("#childRate").val("");
+        }
+        else {
+            $("#childRate").prop("disabled", false);
+        }
+    });
+    $("#IsSingleEqualDouble").change(function () {
+        if ($(this).prop("checked") == true) {
+            $("#SingleRate").val($("#DoubleRate").val());
+        }
+        else {
+            $("#childRate").prop("disabled", false);
+            var value = ($("#SingleRate").val()) / 2;;
+            $("#SingleRate").val(value);
+        }
+    });
+ 
+    $(".showBlackOut").click(function () {
+        $(".popBlackDate").show();
+        $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
+    });
+    $(".closepopBlackOut").click(function () {
+        $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
+        $(".popBlackDate").hide();
+    })
+
 
 });

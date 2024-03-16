@@ -249,8 +249,15 @@ namespace GrotHotel.HotelRepository.Services
             return response;
         }
 
+
+        //Delete Method
         public async Task<HttpResponseMessage> Delete(int id)
         {
+            var hotel = await GetRooms(id);
+            var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images\\HotelImages");
+            var filePath = Path.Combine(uploadsFolder, hotel.HotelImage);
+            if (System.IO.File.Exists(filePath)) { System.IO.File.Delete(filePath); }
+
             var url = $"{baseurl}DeleteHotel/{id}";
             var response = _client.DeleteAsync(url).Result;
             return response;
@@ -258,6 +265,12 @@ namespace GrotHotel.HotelRepository.Services
 
         public async Task<HttpResponseMessage> DeleteRoom(int id)
         {
+            var hotel = await GetRooms(id);
+            var hotelRoom = hotel.HotelRooms.FirstOrDefault(m => m.HotelRoomId == id);
+            var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images\\RoomImages");
+            var filePath = Path.Combine(uploadsFolder, hotelRoom.RoomPicture);
+            if (System.IO.File.Exists(filePath)) { System.IO.File.Delete(filePath); }
+
             var url = $"{baseurl}DeleteRoom/{id}";
             var response = _client.DeleteAsync(url).Result;
             return response;

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GrotHotel.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GrotHotelApi.Models
@@ -29,7 +30,7 @@ namespace GrotHotelApi.Models
         [Required]
         public DateTime DateTo { get; set; }
 
-        public BlackOutDate BlackOutDate { get; set; }
+        public BlackOutDate? BlackOutDate { get; set; }
         [Required]
         public decimal SingleRate { get; set; }
         [Required]
@@ -51,13 +52,7 @@ namespace GrotHotelApi.Models
 
         public int HotelRoomId { get; set; }
     }
-    public class BlackOutDate
-    {
-        [Key]
-        public int Id { get; set; }
-        public List<DateTime> ListDate { get; set; }
-        public int RoomRateId { get; set; }
-    }
+ 
     public class HotelRoomUpdate
     {
         [Key]

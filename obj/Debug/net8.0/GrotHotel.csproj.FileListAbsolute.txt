@@ -236,3 +236,4 @@ C:\Users\s12\OneDrive\Documents\Deepak\.Net\GrotHotel\obj\Debug\net8.0\GrotHotel
 C:\Users\s12\OneDrive\Documents\Deepak\.Net\GrotHotel\obj\Debug\net8.0\refint\GrotHotel.dll
 C:\Users\s12\OneDrive\Documents\Deepak\.Net\GrotHotel\obj\Debug\net8.0\GrotHotel.genruntimeconfig.cache
 C:\Users\s12\OneDrive\Documents\Deepak\.Net\GrotHotel\obj\Debug\net8.0\ref\GrotHotel.dll
+C:\Users\s12\OneDrive\Documents\Deepak\.Net\GrotHotel\obj\Debug\net8.0\GrotHotel.sourcelink.json
