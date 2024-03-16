@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GrotHotelApi.Models.Hotel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="conatiner">
+
+    <p class="text-end">
+        <a asp-action="Create" asp-controller="Hotel" class="btn btn-success">Add Hotel</a>
+    </p>
+    <table class="table table-bordered">
+        <thead class="table-info">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.Display("Rooms")
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.Display("Edit")
+                </th>
+                <th>
+                    @Html.Display("Delete")
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-light">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelName)
+                    </td>                
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Rooms", "IndexRoom", new { id = item.HotelId })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.HotelId })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.HotelId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

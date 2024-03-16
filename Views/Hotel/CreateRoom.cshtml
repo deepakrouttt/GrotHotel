@@ -1,0 +1,50 @@
+﻿@model GrotHotelApi.Models.HotelRoom
+
+@{
+    ViewData["Title"] = "CreateRoom";
+    var HotelId = ViewData["HotelId"];
+}
+
+<div>
+    <h3 class="text-primary">Add Room</h3>
+    <hr />
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRoom" asp-controller="Hotel" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="HotelRoomId" class="form-control" type="hidden"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomPictureFile" class="control-label">Picture</label>
+                <input asp-for="RoomPictureFile" class="form-control" type="file"/>
+                <span asp-validation-for="RoomPictureFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="HotelId" class="form-control" type="hidden" value="@HotelId"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

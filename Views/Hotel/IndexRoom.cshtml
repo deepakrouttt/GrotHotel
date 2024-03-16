@@ -1,0 +1,60 @@
+﻿@model GrotHotelApi.Models.Hotel
+@{
+    ViewData["Title"] = "IndexRoom";
+}
+
+<div class="conatiner">
+        <p class="text-end">
+            <a asp-action="CreateRoom" asp-controller="Hotel" class="btn btn-success" asp-route-id="@Model.HotelId">Add Room</a>
+        </p>
+    @if (@Model.HotelRooms.Count != 0)
+    {
+
+        <table class="table table-bordered">
+            <thead class="table-info">
+                <tr>
+                    <th style="width:30%">
+                        @Html.DisplayName("Title")
+                    </th>
+                    <th style="width:40%">
+                        @Html.DisplayName("Discription")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Room Rate")
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.HotelRooms)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Room Rate", "IndexRoomRate", new { id = item.HotelRoomId })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditRoom", new { id=item.HotelRoomId })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteRoom", new { id=item.HotelRoomId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h4>Not Available</h4>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to Hotels</a>
+</div>

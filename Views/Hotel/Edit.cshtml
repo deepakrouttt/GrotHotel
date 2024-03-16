@@ -1,0 +1,72 @@
+﻿@model GrotHotelApi.Models.Hotel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="HotelId" class="form-control" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="HotelName" class="control-label"></label>
+                    <input asp-for="HotelName" class="form-control" />
+                    <span asp-validation-for="HotelName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ChildAgeRange" class="control-label"></label>
+                    <input asp-for="ChildAgeRange" class="form-control" />
+                    <span asp-validation-for="ChildAgeRange" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Rating" class="control-label"></label>
+                    <input asp-for="Rating" class="form-control" />
+                    <span asp-validation-for="Rating" class="text-danger"></span>
+                </div>
+                <div class="d-flex">
+                    <div class="form-group" id="Image">
+                        <label asp-for="HotelImage" class="control-label"></label>
+                        <input asp-for="HotelImage" class="form-control" />
+                        <span asp-validation-for="HotelImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" id="Imagefile">
+                        <label asp-for="HotelImageFile" class="control-label">Product Image</label>
+                        <input asp-for="HotelImageFile" class="form-control" type="file" />
+                        <span asp-validation-for="HotelImageFile" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="btn-image" class="btn btn-primary" style="height:40px;margin:18px 13px 0px">Upload</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

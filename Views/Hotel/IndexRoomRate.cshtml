@@ -1,0 +1,94 @@
+﻿@model GrotHotelApi.Models.HotelRoom
+
+@{
+    ViewData["Title"] = "IndexRoomRate";
+}
+
+<div class="conatiner">
+
+    <p class="text-end">
+        <a asp-action="CreateRate" asp-controller="Hotel" asp-route-id="@Model.HotelRoomId" class="btn btn-success">Add Rate</a>
+    </p>
+     @if (@Model.RoomRates.Count != 0)
+    {
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Date From")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Date To")
+                    </th>
+                    <th>
+                        @Html.DisplayName("BlackOutDate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("SingleRate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("DoubleRate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("TripleRate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("AdultRate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("childRate")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Exception")
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="thead-light">
+                @foreach (var item in Model.RoomRates)
+                {
+                    <tr>
+                        <td>
+                            @item.DateFrom.ToString("dd/MM/yyyy")
+                        </td>
+                        <td>
+                            @item.DateTo.ToString("dd/MM/yyyy")
+                        </td>
+                        <td>
+                            <a href="#">Show</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SingleRate) ₹
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DoubleRate) ₹
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TripleRate) ₹
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AdultRate) ₹
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.childRate) ₹
+                        </td>
+                        <td>
+                            @(item.IsException ? "True" : "False")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditRate", new { id=item.RoomRateId }) |
+                            @Html.ActionLink("Delete", "DeleteRate", new { id = item.RoomRateId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+    </table>
+    }
+    else
+    {
+        <h4>Not Available</h4>
+    }
+</div>
+<div>
+    <a asp-action="IndexRoom" asp-route-id="@Model.HotelId" >Back to Rooms</a>
+</div>
