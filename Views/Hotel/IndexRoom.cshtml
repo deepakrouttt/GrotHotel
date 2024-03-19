@@ -16,6 +16,9 @@
                     <th style="width:30%">
                         @Html.DisplayName("Title")
                     </th>
+                    <th style="width:10%">
+                        @Html.DisplayName("Room")
+                    </th>
                     <th style="width:40%">
                         @Html.DisplayName("Discription")
                     </th>
@@ -32,6 +35,9 @@
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                           <img src="~/Images/RoomImages/@item.RoomPicture" width="35"/>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)
@@ -56,5 +62,5 @@
     }
 </div>
 <div>
-    <a asp-action="Index">Back to Hotels</a>
+    <a asp-action="Index" class="btn btn-primary btn-sm">Back to Hotels</a>
 </div>

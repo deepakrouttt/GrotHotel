@@ -1,5 +1,4 @@
-﻿@model Book
-
+﻿@model Booking
 @{
     ViewData["Title"] = "Hotel Search";
 }
@@ -10,31 +9,32 @@
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
-                    <h1 class="mb-3">Book</h1>
-                    <h4 class="mb-3">Hotel</h4>
                     <h2>Hotel Search</h2>
-
-                    @using (Html.BeginForm("Search", "Booking", FormMethod.Get))
+                    @using (Html.BeginForm("FilterHotels", "Booking", FormMethod.Get))
                     {
-                        <div class="form-group">
-                            <label asp-for="DateFrom">Check-in Date:</label>
-                            <input type="date" asp-for="DateFrom">
+                        <div class="d-flex">
+                            <div class="form-group p-3">
+                                <label asp-for="DateFrom">Check-in Date:</label>
+                                <input type="date" asp-for="DateFrom">
+                            </div>
+                            <div class="form-group p-3">
+                                <label asp-for="DateTo">Check-out Date:</label>
+                                <input type="date" asp-for="DateTo">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="DateTo">Check-out Date:</label>
-                            <input type="date" asp-for="DateTo">
+                        <div class="d-flex">
+                            <div class="form-group p-3">
+                                <label asp-for="Adult" class="form-label">Adults:</label>
+                                <input type="number" asp-for="Adult" Value="1" class="form-control">
+                            </div>
+                            <div class="form-group p-3">
+                                <label asp-for="Children" class="form-label">Children:</label>
+                                <input type="number" asp-for="Children" min="0" class="form-control">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="Adult">Adults:</label>
-                            <input type="number" asp-for="Adult" min="1">
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Children">Children:</label>
-                            <input type="number" asp-for="Children" min="0">
-                        </div>
-                        <button type="submit">Search</button>
-                    } *@
-                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button">Search</a>
+
+                        <button class="btn btn-outline-light btn-lg" type="submit">Search</button>
+                    }
                 </div>
             </div>
         </div>

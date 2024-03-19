@@ -1,10 +1,12 @@
 ﻿using GrotHotel.HotelRepository.IServices;
 using GrotHotelApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 
 namespace GrotHotel.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HotelController : Controller
     {
         private readonly IHotelListService _service;

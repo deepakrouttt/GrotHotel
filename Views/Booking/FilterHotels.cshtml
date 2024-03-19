@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GrotHotelApi.Models.Hotel>
+<link rel="stylesheet" href="~/css/star.css" asp-append-version="true" />
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h4>Search Result</h4>
+
+<div class="m-5">
+    @foreach (var item in Model)
+    {
+        <div class="d-flex border m-3 rounded" style="width:80%">
+            <div class="col p-3">
+                <a asp-action="FilterRooms" asp-route-id="@item.HotelId">
+                    <img src="~/Images/HotelImages/@item.HotelImage" style="width:200px;" />
+                </a>
+            </div>
+            <div class="col m-4" style="flex-grow:3">
+                <a asp-action="FilterRooms" asp-route-id="@item.HotelId">
+                    <h4>@item.HotelName</h4>
+                </a>
+                <small>Address: @item.Address</small>
+                <h6>Rating : <i data-star="@item.Rating"></i></h6>
+                <h5>
+                    Price
+                    @foreach (var room in item.HotelRooms)
+                    {
+                        <b>@room.RoomRates.Min(rate => myVar.NumberFormeting(rate.SingleRate))</b>
+                        break;
+                    }
+                </h5>
+                <h6>@item.Description</h6>
+            </div>
+        </div>
+    }
+</div>

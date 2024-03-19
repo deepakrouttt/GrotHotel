@@ -1,8 +1,10 @@
 ﻿@model GrotHotelApi.Models.HotelRoom
-
 @{
     ViewData["Title"] = "IndexRoomRate";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <div class="conatiner">
     <p class="text-end">
@@ -20,7 +22,7 @@
                         @Html.DisplayName("Date To")
                     </th>
                     <th>
-                        @* @Html.DisplayName("BlackOutDate") *@
+                        @Html.DisplayName("BlackOutDate")
                     </th>
                     <th>
                         @Html.DisplayName("SingleRate")
@@ -54,7 +56,7 @@
                             @item.DateTo.ToString("dd/MM/yyyy")
                         </td>
                         <td>
-                            <a href="#" class="showBlackOut">Show</a>
+                            <a href="#" class="showBlackOut" data-id="@item.RoomRateId">Show</a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.SingleRate) ₹
@@ -89,11 +91,12 @@
     }
 </div>
 <div>
-    <a asp-action="IndexRoom" asp-route-id="@Model.HotelId">Back to Rooms</a>
+    <a asp-action="IndexRoom" asp-route-id="@Model.HotelId" class="btn btn-primary btn-sm">Back to Rooms</a>
 </div>
 <div class="popBlackDate" style="display:none;">
-    hello
+    Add Date : <input type="text" id="datepicker">
     <button type="button" class="closepopBlackOut" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
+    <button class="AddBlackOutDate">Add</button>
 </div>

@@ -89,7 +89,7 @@ namespace GrotHotel.HotelRepository.Services
             }
             var hotelupdate = await HotelSerializeWithImage(hotel);
 
-            var url = baseurl+"addHotel";
+            var url = baseurl + "addHotel";
             StringContent stringContent = new StringContent(JsonConvert.SerializeObject(hotelupdate), Encoding.UTF8, "application/json");
             var response = await _client.PostAsync(url, stringContent);
             return response;
@@ -265,15 +265,27 @@ namespace GrotHotel.HotelRepository.Services
 
         public async Task<HttpResponseMessage> DeleteRoom(int id)
         {
-            var hotel = await GetRooms(id);
-            var hotelRoom = hotel.HotelRooms.FirstOrDefault(m => m.HotelRoomId == id);
+            var url = $"{baseurl}GetRoom/{id}";
+            var response = await _client.GetAsync(url);
+            var hotelRoom = new HotelRoom();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<HotelRoom>(result);
+                if (data != null)
+                {
+                    hotelRoom = data;
+                }
+            }
+
             var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images\\RoomImages");
             var filePath = Path.Combine(uploadsFolder, hotelRoom.RoomPicture);
             if (System.IO.File.Exists(filePath)) { System.IO.File.Delete(filePath); }
 
-            var url = $"{baseurl}DeleteRoom/{id}";
-            var response = _client.DeleteAsync(url).Result;
-            return response;
+            var Deleteurl = $"{baseurl}DeleteRoom/{id}";
+            var Deleteresponse = _client.DeleteAsync(Deleteurl).Result;
+            return Deleteresponse;
         }
 
 
@@ -322,7 +334,7 @@ namespace GrotHotel.HotelRepository.Services
         {
             var RoomUpdate = new HotelRoomUpdate
             {
-                HotelRoomId=hotelRoom.HotelRoomId,
+                HotelRoomId = hotelRoom.HotelRoomId,
                 Title = hotelRoom.Title,
                 RoomPicture = hotelRoom.RoomPicture,
                 Description = hotelRoom.Description,

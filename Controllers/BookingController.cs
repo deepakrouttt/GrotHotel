@@ -1,77 +1,38 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GrotHotel.HotelRepository.IServices;
+using GrotHotel.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GrotHotel.Controllers
 {
+    [Authorize(Roles = "Consumer")]
     public class BookingController : Controller
     {
-   
+        private readonly IBookingService _service;
+
+        public BookingController(IBookingService service)
+        {
+            _service = service;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Details(int id)
+        public async Task<ActionResult> FilterHotels(Booking booking)
         {
-            return View();
+            var hotels = await _service.FilterHotels(booking);
+            return View(hotels);
         }
 
- 
-        public ActionResult Create()
+
+        public async Task<ActionResult> FilterRooms(int id)
         {
-            return View();
+            var HotelRooms = await _service.FilterHotelRooms(id);
+            return View(HotelRooms);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

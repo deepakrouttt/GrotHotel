@@ -1,5 +1,6 @@
 using GrotHotel.HotelRepository.IServices;
 using GrotHotel.HotelRepository.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.FileProviders;
 
 namespace GrotHotel
@@ -10,9 +11,24 @@ namespace GrotHotel
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddHttpClient();
+            builder.Services.AddHttpContextAccessor();  
             builder.Services.AddScoped<IHotelListService, HotelListService>();
+            builder.Services.AddScoped<IBookingService, BookingService>();
+            builder.Services.AddScoped<IUserService, UserService>();
             // Add services to the container.   
             builder.Services.AddControllersWithViews();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Validation/Login";
+            options.LogoutPath = "/Validation/Logout";
+            options.AccessDeniedPath = options.LoginPath;
+        });
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -25,14 +41,14 @@ namespace GrotHotel
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseSession();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Validation}/{action=Login}/{id?}");
 
             app.Run();
         }

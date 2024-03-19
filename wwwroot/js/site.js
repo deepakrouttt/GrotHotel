@@ -55,15 +55,42 @@
             $("#SingleRate").val(value);
         }
     });
- 
+
     $(".showBlackOut").click(function () {
         $(".popBlackDate").show();
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
+        var id = $(this).data("id");
+        $.ajax({
+            url: 'https://localhost:44309/api/HotelApi/GetBlackOutDate/' + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (dates) {
+                console.log(dates);
+                $('#datepicker').datepicker({
+                    beforeShowDay: function (date) {
+                        var stringDate = $.datepicker.formatDate('yy-mm-dd', date);
+                        var isBlackout = (dates.indexOf(stringDate) !== -1);
+                        return [!isBlackout, isBlackout ? 'blackout-date' : ''];
+                    },
+                    dateFormat: 'yy-mm-dd',
+                    onSelect: function (dateText) {
+                        $(this).find('.ui-state-active').css('background-color', 'black');
+                    }
+                });
+                $("#datepicker").focus();
+    //            $(".AddBlackOutDate").click(function () {
+    //                var RoomRateId = 
+    //})
+            },
+            error: function (error) {
+                // Handle errors here
+                console.log(error);
+            }
+        });
     });
     $(".closepopBlackOut").click(function () {
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
         $(".popBlackDate").hide();
     })
-
 
 });

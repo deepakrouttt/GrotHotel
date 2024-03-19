@@ -5,20 +5,8 @@
       "PackagePath": "staticwebassets\\GrotHotel.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\200910211248178432-7bd8310236e511e79b550a9df65c8753.avif",
-      "PackagePath": "staticwebassets\\Images\\HotelImages\\200910211248178432-7bd8310236e511e79b550a9df65c8753.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\27c1c87a557a11e987d30242ac110002.avif",
-      "PackagePath": "staticwebassets\\Images\\HotelImages\\27c1c87a557a11e987d30242ac110002.avif"
-    },
-    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\78d14d8c2ccf11e8a42302755708f0b3.jpg",
       "PackagePath": "staticwebassets\\Images\\HotelImages\\78d14d8c2ccf11e8a42302755708f0b3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\Ginger_Jaipur.avif",
-      "PackagePath": "staticwebassets\\Images\\HotelImages\\Ginger_Jaipur.avif"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\HotelDeNada.jpg",
@@ -33,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\HotelImages\\download (1).jpg"
     },
     {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\foutPoint.jpg",
+      "PackagePath": "staticwebassets\\Images\\HotelImages\\foutPoint.jpg"
+    },
+    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\gingerjaipur.jpg",
       "PackagePath": "staticwebassets\\Images\\HotelImages\\gingerjaipur.jpg"
     },
@@ -41,80 +33,80 @@
       "PackagePath": "staticwebassets\\Images\\HotelImages\\gingerjaipur.png"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\0895901283ab11e9b3b70242ac110003.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\0895901283ab11e9b3b70242ac110003.avif"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\renest.png",
+      "PackagePath": "staticwebassets\\Images\\HotelImages\\renest.png"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\0c0272725cd111ec89d10a58a9feac02.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\0c0272725cd111ec89d10a58a9feac02.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\200910211248178432-320014-d1989284f44c11eb8f6b0a58a9feac02.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\200910211248178432-320014-d1989284f44c11eb8f6b0a58a9feac02.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\201303041731393882-4492396-c33221ceb22011eb97740242ac110005.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\201303041731393882-4492396-c33221ceb22011eb97740242ac110005.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\201303041731393882-91-a88baaf4e19111e48fe436cfdd80c293 (1).avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\201303041731393882-91-a88baaf4e19111e48fe436cfdd80c293 (1).avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\201303041731393882-91-a88baaf4e19111e48fe436cfdd80c293.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\201303041731393882-91-a88baaf4e19111e48fe436cfdd80c293.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\201310191701159412-24927-902fb244fcba11e5b5660015c5f4277e.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\201310191701159412-24927-902fb244fcba11e5b5660015c5f4277e.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\201310191701159412-4736872-5a4cf28acf5611ebb8760242ac110009.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\201310191701159412-4736872-5a4cf28acf5611ebb8760242ac110009.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\30a7537c5cd111ec92c70a58a9feac02.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\30a7537c5cd111ec92c70a58a9feac02.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\37cd304e8fd611ecb1df0a58a9feac02.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\37cd304e8fd611ecb1df0a58a9feac02.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\69cb3f425cd111ec9e020a58a9feac02 (1).webp",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\69cb3f425cd111ec9e020a58a9feac02 (1).webp"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\69cb3f425cd111ec9e020a58a9feac02.webp",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\69cb3f425cd111ec9e020a58a9feac02.webp"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\10to5.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\10to5.png"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\78d14d8c2ccf11e8a42302755708f0b3.jpg",
       "PackagePath": "staticwebassets\\Images\\RoomImages\\78d14d8c2ccf11e8a42302755708f0b3.jpg"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\7a855d30f14611e8bd550242ac110004.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\7a855d30f14611e8bd550242ac110004.avif"
-    },
-    {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\7c493608078a11e6a09e001ec9b85d13.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\7c493608078a11e6a09e001ec9b85d13.avif"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Deluxe King.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\Deluxe King.png"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Screenshot 2024-03-15 125925.png",
       "PackagePath": "staticwebassets\\Images\\RoomImages\\Screenshot 2024-03-15 125925.png"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\a4ddb64af14611e8b70d0242ac110002.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\a4ddb64af14611e8b70d0242ac110002.avif"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Screenshot_1.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\Screenshot_1.png"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\bd6a7f5c780911e7bc9f025f77df004f.avif",
-      "PackagePath": "staticwebassets\\Images\\RoomImages\\bd6a7f5c780911e7bc9f025f77df004f.avif"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\busnicess.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\busnicess.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\cludtwin.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\cludtwin.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\dilux twin.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\dilux twin.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\parrotRoom.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\parrotRoom.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\signaturedouble.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\signaturedouble.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\signaturetwin.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\signaturetwin.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\sparratroom.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\sparratroom.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\standard2.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\standard2.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\standardroom.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\standardroom.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\superking.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\superking.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\workingroom.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\workingroom.png"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\starRating.css",
+      "PackagePath": "staticwebassets\\css\\starRating.css"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\favicon.ico",
