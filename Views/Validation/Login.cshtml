@@ -13,24 +13,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
-<body>
-    <div class="container shadow p-3 mb-5 bg-white rounded" style="margin-top:100px">
+<body style="background-color:aliceblue;">
+    <div class="text-center mt-2">
+    <img src="/Images/grothotel-high-resolution-logo-transparent.png" width="200" />
+    </div>
+    <div class="container shadow p-3 mb-5 bg-white rounded" style="margin-top:60px">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                     class="img-fluid" alt="Sample image">
+                <img src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/83916/s960_hotel_booking.jpg" class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form asp-action="Login" method="post">
                     <div class="form-outline mb-4">
                         <input asp-for="Username" class="form-control form-control-lg"
                                placeholder="Enter username" />
-                        <label class="form-label" asp-for="Username">Email address</label>
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                        <label class="form-label" asp-for="Username">Username</label>
                     </div>
 
                     <div class="form-outline mb-3">
                         <input asp-for="Password" class="form-control form-control-lg"
                                placeholder="Enter password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
                         <label class="form-label" asp-for="Password">Password</label>
                     </div>
 

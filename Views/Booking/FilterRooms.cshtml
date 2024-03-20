@@ -1,50 +1,51 @@
-﻿@model GrotHotelApi.Models.Hotel
+﻿@model dynamicHotelRate
 @{
     ViewData["Title"] = "IndexRoom";
+    var adults = myVar.numberAdults;
+    GrotHotel.myVar.Index = 0;
 }
 <div class="m-3">
-    <h4>@Model.HotelName</h4>
-    @foreach (var item in Model.HotelRooms)
+    <h4 class="text-center  bg-light">@Model.Hotel.HotelName</h4>
+
+    @foreach (var item in Model.Hotel.HotelRooms)
     {
         <div class="d-flex border m-3 rounded" style="width:80%">
             <div class="col p-3">
                 <img src="~/Images/RoomImages/@item.RoomPicture" style="width:200px;" />
             </div>
-            <div class="col m-4" style="flex-grow:3">
+            <div class="col m-2 p-2" style="flex-grow:3">
                 <div class="row">
-                    <div class="col" style="flex-basis: 50%;">
-                        <h5>@item.Title</h5>
-                        <h4>
-                            Rate
-                            @foreach (var room in item.RoomRates)
-                            {
-                                <small style="color:red;">@room.SingleRate</small>
-                                break;
-                            }
-                        </h4>
+                    <div class="col" style="flex-basis: 60%;">
+                        <h5 class="text-primary mt-1">@item.Title</h5>
+                        <h5 class="mt-3">
+                            Rate <b>
+                                <small style="color:red;">
+                                    @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
+                                </small>
+                            </b>
+                        </h5>
+                        @{
+                            var descriptions = myVar.DiscriptionFormat(item.Description);
+                            var rowCount = (int)Math.Ceiling((double)descriptions.Count / 3);
+                        }
+                        @for (int i = 0; i < rowCount; i++)
+                        {
+                            <div class="row pt-3" style="width: 400px;">
+                                @for (int j = i * 3; j < Math.Min((i + 1) * 3, descriptions.Count); j++)
+                                {
+                                    <div class="col">
+                                        <small>@descriptions[j]</small>
+                                    </div>
+                                }
+                            </div>
+                        }
                     </div>
-                    <div class="col text-end">
+                    <div class="col m-auto">
                         <button type="button" class="btn btn-danger">Book</button>
                     </div>
                 </div>
-                @{
-                    var descriptions = myVar.DiscriptionFormat(item.Description);
-                    var rowCount = (int)Math.Ceiling((double)descriptions.Count / 3);
-                }
-                @for (int i = 0; i < rowCount; i++)
-                {
-                    <div class="row pt-3" style="width: 500px;">
-                        @for (int j = i * 3; j < Math.Min((i + 1) * 3, descriptions.Count); j++)
-                        {
-                            <div class="col">
-                                <small>@descriptions[j]</small>
-                            </div>
-                        }
-                        <div class="col">
-                        </div>
-                    </div>
-                }
             </div>
         </div>
+        GrotHotel.myVar.Index++;
     }
 </div>

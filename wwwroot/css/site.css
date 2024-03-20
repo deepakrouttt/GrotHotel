@@ -1,5 +1,8 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: "Asar", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @media (min-width: 768px) {
@@ -22,6 +25,7 @@ body {
 }
 .popBlackDate {
     border: 1px solid black;
+    padding:4px;
     margin: auto;
     width: 400px !important;
     height: 350px;
@@ -32,11 +36,15 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-.closepopBlackOut{
-    position:absolute;
-    right:0px;
-    top:0px;
-    border-color:lightgray;
+#ui-datepicker-div{
+    margin-top:10px !important;
+    margin-left:-15px !important;
+}
+.closepopBlackOut {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-color: lightgray;
 }
 .BookingImage {
     background-position: center;
@@ -45,9 +53,15 @@ body {
     background-image: url('https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 400px;
 }
+.hotelFilterName{
+    cursor:pointer !important;
+}
+.hotelFilterName :hover {
+    color :red;
+}
 .mask {
     background-color: rgba(0, 0, 0, 0.6) !important;
-    height:100%;
+    height: 100%;
 }
 input[type="date"] {
     appearance: none;
@@ -61,11 +75,8 @@ input[type="date"] {
     display: inline-block !important;
     visibility: visible !important;
 }
-.ui-state-active {
-    background-color: black !important; 
-}
-.blackout-date {
+.blackout-date > .ui-state-default {
     background-color: black !important;
-    color: white  !important; 
+    color: white !important;
 }
 

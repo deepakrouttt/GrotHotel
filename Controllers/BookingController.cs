@@ -23,6 +23,11 @@ namespace GrotHotel.Controllers
 
         public async Task<ActionResult> FilterHotels(Booking booking)
         {
+            if (booking.DateFrom == DateTime.MinValue || booking.DateTo == DateTime.MinValue)
+            {
+                return RedirectToAction("Index");
+            }
+
             var hotels = await _service.FilterHotels(booking);
             return View(hotels);
         }

@@ -22,6 +22,7 @@ namespace GrotHotel.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginUser _login)
         {

@@ -16,29 +16,30 @@ namespace GrotHotel.HotelRepository.Services
             _client = client;
         }
 
-        public async Task<List<Hotel>> FilterHotels(Booking booking)
+        public async Task<List<dynamicHotelRate>> FilterHotels(Booking booking)
         {
             var url = $"{baseUrl}GetHotelsBySearch?DateFrom={booking.DateFrom.ToString("yyyy-MM-dd")}" +
                 $"&DateTo={booking.DateTo.ToString("yyyy-MM-dd")}&Adult={booking.Adult}";
             var response = await _client.GetAsync(url);
-            var Hotels = new List<Hotel>();
+            var Hotels = new List<dynamicHotelRate>();
             myVar.TempBooking = booking;
 
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadAsStringAsync();
-                var data = JsonConvert.DeserializeObject<List<Hotel>>(result);
+                var data = JsonConvert.DeserializeObject<HotelsWithRate>(result);
                 if (data != null)
                 {
-                    Hotels = data;
+                    Hotels = data.Hotels;
+                    myVar.numberAdults = data.numberAdults;
                 }
             }
             return Hotels;
         }
-        public async Task<Hotel> FilterHotelRooms(int id)
+        public async Task<dynamicHotelRate> FilterHotelRooms(int id)
         {
-            var Hotel =await FilterHotels(myVar.TempBooking);
-            var filterHotel = Hotel.FirstOrDefault(h => h.HotelId == id);
+            var Hotel = await FilterHotels(myVar.TempBooking);
+            var filterHotel = Hotel.FirstOrDefault(h => h.Hotel.HotelId == id);
             return filterHotel;
         }
     }

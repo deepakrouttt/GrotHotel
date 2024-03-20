@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Images\\HotelImages\\gingerjaipur.png"
     },
     {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\hotelRoyal.png",
+      "PackagePath": "staticwebassets\\Images\\HotelImages\\hotelRoyal.png"
+    },
+    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\HotelImages\\renest.png",
       "PackagePath": "staticwebassets\\Images\\HotelImages\\renest.png"
     },
@@ -55,6 +59,14 @@
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Screenshot_1.png",
       "PackagePath": "staticwebassets\\Images\\RoomImages\\Screenshot_1.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Screenshot_3.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\Screenshot_3.png"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\Screenshot_4.png",
+      "PackagePath": "staticwebassets\\Images\\RoomImages\\Screenshot_4.png"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\busnicess.png",
@@ -101,12 +113,16 @@
       "PackagePath": "staticwebassets\\Images\\RoomImages\\workingroom.png"
     },
     {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\grothotel-high-resolution-logo-transparent.png",
+      "PackagePath": "staticwebassets\\Images\\grothotel-high-resolution-logo-transparent.png"
+    },
+    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\starRating.css",
-      "PackagePath": "staticwebassets\\css\\starRating.css"
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\star.css",
+      "PackagePath": "staticwebassets\\css\\star.css"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\favicon.ico",

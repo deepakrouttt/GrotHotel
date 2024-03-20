@@ -59,31 +59,52 @@
     $(".showBlackOut").click(function () {
         $(".popBlackDate").show();
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
-        var id = $(this).data("id");
         $.ajax({
-            url: 'https://localhost:44309/api/HotelApi/GetBlackOutDate/' + id,
+            url: 'https://localhost:44309/api/HotelApi/GetBlackOutDate/',
             type: 'GET',
-            dataType: 'json',
             success: function (dates) {
-                console.log(dates);
                 $('#datepicker').datepicker({
                     beforeShowDay: function (date) {
                         var stringDate = $.datepicker.formatDate('yy-mm-dd', date);
                         var isBlackout = (dates.indexOf(stringDate) !== -1);
-                        return [!isBlackout, isBlackout ? 'blackout-date' : ''];
+                        return [true, isBlackout ? 'blackout-date' : ''];
                     },
                     dateFormat: 'yy-mm-dd',
                     onSelect: function (dateText) {
-                        $(this).find('.ui-state-active').css('background-color', 'black');
+                        $(this).find('.ui-state-active').css('background-color', 'yellow');
                     }
                 });
                 $("#datepicker").focus();
-    //            $(".AddBlackOutDate").click(function () {
-    //                var RoomRateId = 
-    //})
+
+                $(".AddBlackOutDate").click(function () {
+                    var RoomRateId = $(this).parent().siblings().closest('.container').find(".showBlackOut").data("id");
+                    var date = $(this).siblings().closest("#datepicker").val();
+                    var blackoutDate = {
+                        "id": 0,
+                        "dates": [
+                            {
+                                "id": 0,
+                                "date": date                              
+                            }
+                        ],
+                        "roomRateId": RoomRateId
+                    };
+                    $.ajax({
+                        url: 'https://localhost:44309/api/HotelApi/addBlackOutDate',
+                        type: 'POST',
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(blackoutDate),
+                        success: function (data) {
+                            $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
+                            $(".popBlackDate").hide();
+                        },
+                        error: function (error) {  
+                            console.log(error);
+                        }
+                    });
+                });
             },
             error: function (error) {
-                // Handle errors here
                 console.log(error);
             }
         });

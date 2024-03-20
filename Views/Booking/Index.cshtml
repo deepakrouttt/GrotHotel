@@ -16,27 +16,42 @@
                             <div class="form-group p-3">
                                 <label asp-for="DateFrom">Check-in Date:</label>
                                 <input type="date" asp-for="DateFrom">
+                                <span asp-validation-for="DateFrom" class="text-danger"></span>
                             </div>
                             <div class="form-group p-3">
                                 <label asp-for="DateTo">Check-out Date:</label>
                                 <input type="date" asp-for="DateTo">
+                                <span asp-validation-for="DateTo" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex" style="justify-content: space-between;">
                             <div class="form-group p-3">
                                 <label asp-for="Adult" class="form-label">Adults:</label>
                                 <input type="number" asp-for="Adult" Value="1" class="form-control">
+                                <span asp-validation-for="Adult" class="text-danger"></span>
                             </div>
                             <div class="form-group p-3">
                                 <label asp-for="Children" class="form-label">Children:</label>
-                                <input type="number" asp-for="Children" min="0" class="form-control">
+                                <input type="checkbox" id="ChildrenCheck"/>
+                                <input type="number" asp-for="Children" min="0" class="form-control" disabled>
                             </div>
                         </div>
 
-                        <button class="btn btn-outline-light btn-lg" type="submit">Search</button>
+                        <button class="btn btn-outline-light btn-lg " type="submit">Search</button>
                     }
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+    $(document).ready(function () {
+        if ($("#ChildrenCheck").prop("checked")) {
+            $("#Children").prop("disabled", false);
+        }
+        $("#ChildrenCheck").change(function () {
+            $("#Children").prop("disabled", !$(this).prop("checked"));
+        });
+    });
+</script>

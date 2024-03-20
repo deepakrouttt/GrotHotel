@@ -10,7 +10,7 @@
     <p class="text-end">
         <a asp-action="CreateRate" asp-controller="Hotel" asp-route-id="@Model.HotelRoomId" class="btn btn-success">Add Rate</a>
     </p>
-    @if (@Model.RoomRates.Count != 0)
+    @if (Model.RoomRates.Count != 0)
     {
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -94,7 +94,7 @@
     <a asp-action="IndexRoom" asp-route-id="@Model.HotelId" class="btn btn-primary btn-sm">Back to Rooms</a>
 </div>
 <div class="popBlackDate" style="display:none;">
-    Add Date : <input type="text" id="datepicker">
+    Add Date : <input type="text" id="datepicker" class="m-1">
     <button type="button" class="closepopBlackOut" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>

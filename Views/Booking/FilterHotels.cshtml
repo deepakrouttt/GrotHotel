@@ -1,7 +1,8 @@
-﻿@model IEnumerable<GrotHotelApi.Models.Hotel>
+﻿@model IEnumerable<dynamicHotelRate>
 <link rel="stylesheet" href="~/css/star.css" asp-append-version="true" />
 @{
     ViewData["Title"] = "Search";
+    var adults = myVar.numberAdults;
 }
 
 <h4>Search Result</h4>
@@ -11,25 +12,30 @@
     {
         <div class="d-flex border m-3 rounded" style="width:80%">
             <div class="col p-3">
-                <a asp-action="FilterRooms" asp-route-id="@item.HotelId">
-                    <img src="~/Images/HotelImages/@item.HotelImage" style="width:200px;" />
+                <a asp-action="FilterRooms" asp-route-id="@item.Hotel.HotelId">
+                    <img src="~/Images/HotelImages/@item.Hotel.HotelImage" style="width:200px;" />
                 </a>
             </div>
             <div class="col m-4" style="flex-grow:3">
-                <a asp-action="FilterRooms" asp-route-id="@item.HotelId">
-                    <h4>@item.HotelName</h4>
+                <a asp-action="FilterRooms" asp-route-id="@item.Hotel.HotelId" class="homeFilter">
+                    <h4>@item.Hotel.HotelName</h4>
                 </a>
-                <small>Address: @item.Address</small>
-                <h6>Rating : <i data-star="@item.Rating"></i></h6>
+                <small>Address: @item.Hotel.Address</small>
+                <h6>Rating : @item.Hotel.Rating @*<i data-star="@item.Rating"></i>*@</h6>
                 <h5>
-                    Price
-                    @foreach (var room in item.HotelRooms)
-                    {
-                        <b>@room.RoomRates.Min(rate => myVar.NumberFormeting(rate.SingleRate))</b>
-                        break;
-                    }
-                </h5>
-                <h6>@item.Description</h6>
+                    Price <b>
+                        <small style="color:red;">
+                            @foreach (var room in item.RoomRates)
+                            {
+                                @myVar.NumberFormeting(room.Rate);
+                                break;
+                            }
+                        </small>
+                    </b>
+                </h5>@foreach(var discription in myVar.DiscriptionFormat(item.Hotel.Description))
+                {
+                    <h6>@discription</h6>
+                }
             </div>
         </div>
     }
