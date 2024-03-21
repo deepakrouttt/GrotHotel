@@ -8,6 +8,7 @@ namespace GrotHotel
         public static string Role {get;set;}
         public static Booking TempBooking { get; set; }
         public static int numberAdults { get; set; }
+        public static List<string> ListDate { get; set; }
 
         public static int Index { get; set; }
 

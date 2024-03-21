@@ -39,6 +39,13 @@ namespace GrotHotel.HotelRepository.Services
         public async Task<dynamicHotelRate> FilterHotelRooms(int id)
         {
             var Hotel = await FilterHotels(myVar.TempBooking);
+
+            var client = new HttpClient();
+            var response = await client.GetAsync("https://localhost:44309/api/HotelApi/GetBlackOutDate");
+
+            var content = await response.Content.ReadAsStringAsync();
+            myVar.ListDate = JsonConvert.DeserializeObject<List<string>>(content);
+
             var filterHotel = Hotel.FirstOrDefault(h => h.Hotel.HotelId == id);
             return filterHotel;
         }

@@ -4,6 +4,7 @@
     var adults = myVar.numberAdults;
     var dateFrom = myVar.TempBooking.DateFrom;
     var dateTo = myVar.TempBooking.DateTo;
+    var ListDate = myVar.ListDate;
     GrotHotel.myVar.Index = 0;
 }
 <div class="m-3">
@@ -49,24 +50,32 @@
                             @for (DateTime date = dateFrom; date <= dateTo && date <= dateFrom.AddDays(6);
                            date = date.AddDays(1))
                             {
+                                var isBlackoutDate = ListDate.Contains(date.ToString("yyyy-MM-dd"));
+
                                 if (@Model.RoomRates.ElementAtOrDefault(myVar.Index).DateFrom <= dateTo &&
                                 @Model.RoomRates.ElementAtOrDefault(myVar.Index).DateTo >= dateFrom
                                 )
                                 {
                                     <div class="p-1">
                                         <p>@date.ToString("dddd")</p>
+                                        @if (isBlackoutDate)
+                                        {
+                                            <span>N/A</span>
+                                        }
+                                        else
+                                        {
+                                            <span style="transform: rotate(1deg);">
+                                                @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
+                                            </span>
+                                        }
                                         <span style="transform: rotate(1deg);">
-                                            @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
-                                        </span>
                                     </div>
                                 }
                             }
 
                         </div>
                     </div>
-                    <div class="col m-5">
-                        <button type="button" class="btn btn-danger">Book</button>
-                    </div>
+                        <button type="button" class="btn btn-danger" style="width:60px;height:100px;">Book</button>
                 </div>
             </div>
         </div>

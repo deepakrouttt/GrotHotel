@@ -17,4 +17,9 @@ namespace GrotHotel.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
     }
+    class BlackoutData
+    {
+        public string RoomRateId { get; set; }
+        public List<string> Dates { get; set; }
+    }
 }
