@@ -3,11 +3,13 @@
 @{
     ViewData["Title"] = "Search";
     var adults = myVar.numberAdults;
+    var dateFrom = myVar.TempBooking.DateFrom.ToString("ddd, MMM dd");
+    var dateTo = myVar.TempBooking.DateTo.ToString("ddd, MMM dd");
 }
 
-<h4>Search Result</h4>
+<h5 class="text-center">@Model.Count() hotels on @dateFrom - @dateTo for @adults adults</h5>
 
-<div class="m-5">
+<div class="m-3">
     @foreach (var item in Model)
     {
         <div class="d-flex border m-3 rounded" style="width:80%">
@@ -21,7 +23,7 @@
                     <h4>@item.Hotel.HotelName</h4>
                 </a>
                 <small>Address: @item.Hotel.Address</small>
-                <h6>Rating : @item.Hotel.Rating @*<i data-star="@item.Rating"></i>*@</h6>
+                <h6>Rating :<i data-star="@item.Hotel.Rating"></i></h6>
                 <h5>
                     Price <b>
                         <small style="color:red;">

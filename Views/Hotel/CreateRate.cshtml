@@ -1,18 +1,17 @@
 ﻿@model GrotHotelApi.Models.RoomRate
-
 @{
     ViewData["Title"] = "CreateRate";
     var HotelRoomId = ViewData["HotelRoomId"];
 }
 <div>
-    <h3 class="text-primary">Add RoomRate</h3>
+    <h3 class="text-primary heading">Add Room Rate</h3>
     <hr />
 </div>
 <div class="">
     <div class="col-md-4">
         <form asp-action="CreateRate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div>
+            <div class="d-flex">
                 <div class="col">
                     <div class="form-group">
                         <input asp-for="RoomRateId" class="form-control" type="hidden" />
@@ -53,23 +52,23 @@
                         <span asp-validation-for="childRate" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form-group form-check">
+                <div class="col m-3" style="position:absolute;left:40%;">
+                    <div class="form-group form-check m-1">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="IsException" /> @Html.DisplayName("Exception : 1 single rate + 1 child = 2 double rate")
                         </label>
                     </div>
-                    <div class="form-group form-check">
+                    <div class="form-group form-check m-1">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="IsExtraAdult" checked /> @Html.DisplayName("Extra Adult")
                         </label>
                     </div>
-                    <div class="form-group form-check">
+                    <div class="form-group form-check m-1">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="IsChildAllow" checked /> @Html.DisplayName("Is Child Allow")
                         </label>
                     </div>
-                    <div class="form-group form-check">
+                    <div class="form-group form-check m-1">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="IsSingleEqualDouble" /> @Html.DisplayName("Automatically add rate Single as Double")
                         </label>
@@ -80,14 +79,13 @@
                 <input asp-for="HotelRoomId" class="form-control" value="@HotelRoomId" type="hidden" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-primary" />
+                <input type="submit" value="Add" class="button-7 m-1" />
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-end">
+    <a asp-action="Index" class="btn btn-light">Back to List</a>
 </div>
 
 @section Scripts {
@@ -95,8 +93,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-<script>
-    $(function () {
-     
-    })
-</script>

@@ -6,29 +6,30 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
     margin-bottom: 60px;
 }
+
 .popBlackDate {
     border: 1px solid black;
-    padding:4px;
+    padding: 4px;
     margin: auto;
     width: 400px !important;
-    height: 350px;
+    height: 380px;
     background-color: #fff;
     position: fixed;
     left: 25%;
@@ -36,9 +37,20 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-#ui-datepicker-div{
-    margin-top:10px !important;
-    margin-left:-15px !important;
+
+#ui-datepicker-div {
+    margin-top: 10px !important;
+    margin-left: -15px !important;
+}
+.AddBlackOutDate{
+    position:absolute;
+    bottom:10px;
+    left:20%;
+}
+.RemoveBlackOutDate {
+    position: absolute;
+    bottom: 10px;
+    left: 60%;
 }
 .closepopBlackOut {
     position: absolute;
@@ -53,16 +65,20 @@ body {
     background-image: url('https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 400px;
 }
-.hotelFilterName{
-    cursor:pointer !important;
+
+.hotelFilterName {
+    cursor: pointer !important;
 }
-.hotelFilterName :hover {
-    color :red;
-}
+
+    .hotelFilterName :hover {
+        color: red;
+    }
+
 .mask {
     background-color: rgba(0, 0, 0, 0.6) !important;
     height: 100%;
 }
+
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
@@ -75,8 +91,57 @@ input[type="date"] {
     display: inline-block !important;
     visibility: visible !important;
 }
+
 .blackout-date > .ui-state-default {
     background-color: black !important;
     color: white !important;
 }
 
+.heading {
+    font-size: 30px;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.button-7 {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+    .button-7:hover,
+    .button-7:focus {
+        background-color: #07c;
+    }
+
+    .button-7:focus {
+        box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+    }
+
+    .button-7:active {
+        background-color: #0064bd;
+        box-shadow: none;
+    }

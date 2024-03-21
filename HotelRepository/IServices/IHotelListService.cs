@@ -1,4 +1,5 @@
-﻿using GrotHotelApi.Models;
+﻿using GrotHotel.Models.Server_Model;
+using GrotHotelApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 

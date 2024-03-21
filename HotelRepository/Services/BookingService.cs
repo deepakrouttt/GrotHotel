@@ -19,8 +19,8 @@ namespace GrotHotel.HotelRepository.Services
         public async Task<List<dynamicHotelRate>> FilterHotels(Booking booking)
         {
             var url = $"{baseUrl}GetHotelsBySearch?DateFrom={booking.DateFrom.ToString("yyyy-MM-dd")}" +
-                $"&DateTo={booking.DateTo.ToString("yyyy-MM-dd")}&Adult={booking.Adult}";
-            var response = await _client.GetAsync(url);
+                $"&DateTo={booking.DateTo.ToString("yyyy-MM-dd")}&Adult={booking.Adult}&Children={booking.Children}";
+            var response = await _client.PostAsync(url,null);
             var Hotels = new List<dynamicHotelRate>();
             myVar.TempBooking = booking;
 

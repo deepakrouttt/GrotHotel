@@ -1,4 +1,5 @@
 ﻿using GrotHotel.HotelRepository.IServices;
+using GrotHotel.Models.Server_Model;
 using GrotHotelApi.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

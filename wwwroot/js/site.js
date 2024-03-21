@@ -30,7 +30,6 @@
     $("#IsExtraAdult").change(function () {
         if ($(this).prop("checked") == false) {
             $("#AdultRate").prop("disabled", true);
-            $("#AdultRate").val("");
         }
         else {
             $("#AdultRate").prop("disabled", false);
@@ -39,7 +38,6 @@
     $("#IsChildAllow").change(function () {
         if ($(this).prop("checked") == false) {
             $("#childRate").prop("disabled", true);
-            $("#childRate").val("");
         }
         else {
             $("#childRate").prop("disabled", false);
@@ -57,6 +55,7 @@
     });
 
     $(".showBlackOut").click(function () {
+        $(".ui-datepicker").show();
         $(".popBlackDate").show();
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
         $.ajax({
@@ -78,31 +77,53 @@
 
                 $(".AddBlackOutDate").click(function () {
                     var RoomRateId = $(this).parent().siblings().closest('.container').find(".showBlackOut").data("id");
+                    var blackOutDateId = blackoutDate;
                     var date = $(this).siblings().closest("#datepicker").val();
                     var blackoutDate = {
-                        "id": 0,
+                        "roomRateId": RoomRateId,
                         "dates": [
                             {
-                                "id": 0,
-                                "date": date                              
+                                "date": date
                             }
-                        ],
-                        "roomRateId": RoomRateId
+                        ]
                     };
+                            debugger;
                     $.ajax({
                         url: 'https://localhost:44309/api/HotelApi/addBlackOutDate',
                         type: 'POST',
-                        contentType: "application/json; charset=utf-8",
+                        contentType: "application/json", // Specify JSON content type
                         data: JSON.stringify(blackoutDate),
                         success: function (data) {
                             $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
                             $(".popBlackDate").hide();
+                            window.location.reload();
                         },
                         error: function (error) {  
                             console.log(error);
                         }
                     });
                 });
+
+                $(".RemoveBlackOutDate").click(function () {
+
+                    var date = $(this).siblings().closest("#datepicker").val();
+
+                    $.ajax({
+                        url: 'https://localhost:44309/api/HotelApi/DeleteBlackOutDate?date='+date,
+                        type: 'Delete',
+                        data: null,
+                        success: function (data) {
+                            $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
+                            $(".popBlackDate").hide();
+                            console.log(data);
+                            window.location.reload();
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+
             },
             error: function (error) {
                 console.log(error);
@@ -112,6 +133,7 @@
     $(".closepopBlackOut").click(function () {
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "none");
         $(".popBlackDate").hide();
+        $(".ui-datepicker").hide();
     })
 
 });

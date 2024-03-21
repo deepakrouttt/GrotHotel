@@ -41,8 +41,15 @@ namespace GrotHotel.Controllers
                 HttpContext.Session.SetInt32("UserId", validateUser.id);
                 HttpContext.Session.SetString("Roles", validateUser.role);
                 HttpContext.Session.SetString("UserName", validateUser.username);
+                if (validateUser.role == "Admin")
+                {
+                    return RedirectToAction("Index", "Hotel");
+                }
+                if (validateUser.role == "Consumer")
+                {
+                    return RedirectToAction("Index", "Booking");
+                }
 
-                return RedirectToAction("Index", "Home");
             }
             return View();
         }

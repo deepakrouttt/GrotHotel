@@ -2,10 +2,15 @@
 @{
     ViewData["Title"] = "IndexRoom";
     var adults = myVar.numberAdults;
+    var dateFrom = myVar.TempBooking.DateFrom;
+    var dateTo = myVar.TempBooking.DateTo;
     GrotHotel.myVar.Index = 0;
 }
 <div class="m-3">
-    <h4 class="text-center  bg-light">@Model.Hotel.HotelName</h4>
+    <h4 class="text-center  bg-light">
+        <small>@Model.Hotel.HotelRooms.Count() rooms available on </small>
+        @Model.Hotel.HotelName
+    </h4>
 
     @foreach (var item in Model.Hotel.HotelRooms)
     {
@@ -39,8 +44,27 @@
                                 }
                             </div>
                         }
+                        <hr />
+                        <div class="d-flex mt-1">
+                            @for (DateTime date = dateFrom; date <= dateTo && date <= dateFrom.AddDays(6);
+                           date = date.AddDays(1))
+                            {
+                                if (@Model.RoomRates.ElementAtOrDefault(myVar.Index).DateFrom <= dateTo &&
+                                @Model.RoomRates.ElementAtOrDefault(myVar.Index).DateTo >= dateFrom
+                                )
+                                {
+                                    <div class="p-1">
+                                        <p>@date.ToString("dddd")</p>
+                                        <span style="transform: rotate(1deg);">
+                                            @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
+                                        </span>
+                                    </div>
+                                }
+                            }
+
+                        </div>
                     </div>
-                    <div class="col m-auto">
+                    <div class="col m-5">
                         <button type="button" class="btn btn-danger">Book</button>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrotHotel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+682451a705976fb8e4b25b09244cc614f02e5a9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a2046b72e13bcf4a5df7c363d1957eb8ba6324d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrotHotel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrotHotel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

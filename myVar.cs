@@ -7,7 +7,7 @@ namespace GrotHotel
     {
         public static string Role {get;set;}
         public static Booking TempBooking { get; set; }
-        public static string numberAdults { get; set; }
+        public static int numberAdults { get; set; }
 
         public static int Index { get; set; }
 
