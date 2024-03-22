@@ -58,14 +58,15 @@
         $(".ui-datepicker").show();
         $(".popBlackDate").show();
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
+        var RoomRateId = $(this).parent().siblings().closest('.container').find(".showBlackOut").data("id");
         $.ajax({
-            url: 'https://localhost:44309/api/HotelApi/GetBlackOutDate/',
+            url: 'https://localhost:44309/api/HotelApi/GetBlackOutDate/' + RoomRateId,
             type: 'GET',
             success: function (dates) {
                 $('#datepicker').datepicker({
                     beforeShowDay: function (date) {
                         var stringDate = $.datepicker.formatDate('yy-mm-dd', date);
-                        var isBlackout = (dates.indexOf(stringDate) !== -1);
+                        var isBlackout = (dates.blackOutDates.indexOf(stringDate) !== -1);
                         return [true, isBlackout ? 'blackout-date' : ''];
                     },
                     dateFormat: 'yy-mm-dd',
@@ -87,7 +88,7 @@
                             }
                         ]
                     };
-                            debugger;
+
                     $.ajax({
                         url: 'https://localhost:44309/api/HotelApi/addBlackOutDate',
                         type: 'POST',

@@ -1,10 +1,12 @@
-﻿@model dynamicHotelRate
+﻿@using Newtonsoft.Json
+@model dynamicHotelRate
 @{
+    var client = new HttpClient();
+    var url = "https://localhost:44309/api/HotelApi/GetBlackOutDate/";
     ViewData["Title"] = "IndexRoom";
     var adults = myVar.numberAdults;
     var dateFrom = myVar.TempBooking.DateFrom;
     var dateTo = myVar.TempBooking.DateTo;
-    var ListDate = myVar.ListDate;
     GrotHotel.myVar.Index = 0;
 }
 <div class="m-3">
@@ -26,7 +28,7 @@
                         <h5 class="mt-3">
                             Rate <b>
                                 <small style="color:red;">
-                                    @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
+                                    @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.TotalRate
                                 </small>
                             </b>
                         </h5>
@@ -50,12 +52,18 @@
                             @for (DateTime date = dateFrom; date <= dateTo && date <= dateFrom.AddDays(6);
                            date = date.AddDays(1))
                             {
-                                var isBlackoutDate = ListDate.Contains(date.ToString("yyyy-MM-dd"));
 
-                                if (@Model.RoomRates.ElementAtOrDefault(myVar.Index).DateFrom <= dateTo &&
-                                @Model.RoomRates.ElementAtOrDefault(myVar.Index).DateTo >= dateFrom
+                                if (Model.RoomRates.ElementAtOrDefault(myVar.Index).DateFrom <= dateTo &&
+                                Model.RoomRates.ElementAtOrDefault(myVar.Index).DateTo >= dateFrom
                                 )
-                                {
+                                { 
+                                    var response = await client.GetAsync( url+ Model.RoomRates.ElementAtOrDefault(myVar.Index).RoomRateId);
+
+                                    var content = await response.Content.ReadAsStringAsync();
+                                    var datelist = JsonConvert.DeserializeObject<BlackoutData>(content);
+
+                                    var isBlackoutDate = datelist != null && datelist.BlackOutDates != null && datelist.BlackOutDates.Contains(date.ToString("yyyy-MM-dd"));
+
                                     <div class="p-1">
                                         <p>@date.ToString("dddd")</p>
                                         @if (isBlackoutDate)
@@ -68,14 +76,13 @@
                                                 @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
                                             </span>
                                         }
-                                        <span style="transform: rotate(1deg);">
                                     </div>
                                 }
                             }
 
                         </div>
                     </div>
-                        <button type="button" class="btn btn-danger" style="width:60px;height:100px;">Book</button>
+                    <button type="button" class="btn btn-danger" style="width:60px;height:100px;">Book</button>
                 </div>
             </div>
         </div>
