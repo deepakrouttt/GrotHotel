@@ -250,7 +250,6 @@ namespace GrotHotel.HotelRepository.Services
             return response;
         }
 
-
         //Delete Method
         public async Task<HttpResponseMessage> Delete(int id)
         {
@@ -289,16 +288,12 @@ namespace GrotHotel.HotelRepository.Services
             return Deleteresponse;
         }
 
-
         public async Task<HttpResponseMessage> DeleteRate(int id)
         {
             var url = $"{baseurl}DeleteRate/{id}";
             var response = _client.DeleteAsync(url).Result;
             return response;
         }
-
-
-
 
         //Serialization 
         public async Task<HotelUpdate> HotelSerialize(Hotel hotel)

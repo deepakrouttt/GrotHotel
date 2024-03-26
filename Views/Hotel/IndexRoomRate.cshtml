@@ -12,8 +12,8 @@
     </p>
     @if (Model.RoomRates.Count != 0)
     {
-        <table class="table table-bordered">
-            <thead class="thead-dark">
+        <table class="table">
+            <thead class="table-info">
                 <tr>
                     <th>
                         @Html.DisplayName("Date From")
@@ -45,15 +45,15 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="thead-light">
+            <tbody class="table-light">
                 @foreach (var item in Model.RoomRates)
                 {
                     <tr>
                         <td>
-                            @item.DateFrom.ToString("dd/MM/yyyy")
+                            <span class="date-from" data-date="@item.DateFrom.ToString("yyyy-MM-dd")">@item.DateFrom.ToString("dd/MM/yyyy")</span>
                         </td>
                         <td>
-                            @item.DateTo.ToString("dd/MM/yyyy")
+                            <span class="date-to" data-date="@item.DateTo.ToString("yyyy-MM-dd")">@item.DateTo.ToString("dd/MM/yyyy")</span>
                         </td>
                         <td>
                             <a href="#" class="showBlackOut" data-id="@item.RoomRateId">Show</a>

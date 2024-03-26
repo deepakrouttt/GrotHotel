@@ -3,14 +3,14 @@
     ViewData["Title"] = "IndexRoom";
 }
 
-<div class="conatiner">
+<div class="container">
         <p class="text-end">
             <a asp-action="CreateRoom" asp-controller="Hotel" class="btn btn-success" asp-route-id="@Model.HotelId">Add Room</a>
         </p>
     @if (@Model.HotelRooms.Count != 0)
     {
 
-        <table class="table table-bordered">
+        <table class="table">
             <thead class="table-info">
                 <tr>
                     <th style="width:30%">
@@ -29,7 +29,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-light">
                 @foreach (var item in Model.HotelRooms)
                 {
                     <tr>

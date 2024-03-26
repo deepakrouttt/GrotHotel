@@ -23,9 +23,10 @@ namespace GrotHotel.Controllers
 
         public async Task<ActionResult> FilterHotels(Booking booking)
         {
-            if (booking.DateFrom == DateTime.MinValue || booking.DateTo == DateTime.MinValue)
+            if (booking.DateFrom == DateTime.MinValue || booking.DateTo == DateTime.MinValue || booking.DateFrom > booking.DateTo)
             {
-                return RedirectToAction("Index");
+                ModelState.AddModelError(string.Empty, "Invalid date range. Please provide valid dates.");
+                return View("Index");
             }
 
             var hotels = await _service.FilterHotels(booking);

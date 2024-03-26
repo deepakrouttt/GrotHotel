@@ -12,6 +12,7 @@
                     <h2>Hotel Search</h2>
                     @using (Html.BeginForm("FilterHotels", "Booking", FormMethod.Get))
                     {
+                        <div asp-validation-summary="ModelOnly" class="text-light"></div>
                         <div class="d-flex">
                             <div class="form-group p-3">
                                 <label asp-for="DateFrom" class="form-label">Check-in Date:</label>

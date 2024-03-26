@@ -32,6 +32,7 @@ namespace GrotHotel.HotelRepository.Services
                 {
                     Hotels = data.Hotels;
                     myVar.numberAdults = data.numberAdults;
+                    myVar.numberChild = data.numberChild;
                 }
             }
             return Hotels;

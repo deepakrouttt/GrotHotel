@@ -6,6 +6,7 @@ namespace GrotHotel.Models
     {
         public List<dynamicHotelRate> Hotels { get; set; }
         public int numberAdults { get; set; }
+        public int numberChild { get; set; }
     }
 
     public class dynamicHotelRate
@@ -19,6 +20,5 @@ namespace GrotHotel.Models
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
         public int RoomRateId { get; set; }
-        public decimal TotalRate { get; set; }
     }
 }

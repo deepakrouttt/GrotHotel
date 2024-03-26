@@ -9,7 +9,7 @@
     <h3 class="text-primary">Add Room</h3>
     <hr />
 </div>
-<div class="row">
+<div class="row bg-light p-1">
     <div class="col-md-4">
         <form asp-action="CreateRoom" asp-controller="Hotel" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,14 +28,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control" style="width: 100%; height: 100px;"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input asp-for="HotelId" class="form-control" type="hidden" value="@HotelId"/>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="createButton mt-1 w-auto" />
             </div>
         </form>
     </div>

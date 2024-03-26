@@ -22,6 +22,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-color: #e8f2fa;
 }
 
 .popBlackDate {
@@ -42,22 +43,26 @@ body {
     margin-top: 10px !important;
     margin-left: -15px !important;
 }
-.AddBlackOutDate{
-    position:absolute;
-    bottom:10px;
-    left:20%;
+
+.AddBlackOutDate {
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
 }
+
 .RemoveBlackOutDate {
     position: absolute;
     bottom: 10px;
     left: 60%;
 }
+
 .closepopBlackOut {
     position: absolute;
     right: 0px;
     top: 0px;
     border-color: lightgray;
 }
+
 .BookingImage {
     background-position: center;
     background-repeat: no-repeat;
@@ -106,6 +111,18 @@ input[type="date"] {
     -webkit-background-clip: text;
 }
 
+.priceContainerWrapper {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.priceContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*button css*/
 .button-7 {
     background-color: #0095ff;
     border: 1px solid transparent;
@@ -132,8 +149,7 @@ input[type="date"] {
     white-space: nowrap;
 }
 
-    .button-7:hover,
-    .button-7:focus {
+    .button-7:hover, .button-7:focus {
         background-color: #07c;
     }
 
@@ -145,3 +161,72 @@ input[type="date"] {
         background-color: #0064bd;
         box-shadow: none;
     }
+
+.button-32 {
+    background-color: #fff000;
+    border-radius: 12px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    transition: 200ms;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+    .button-32:not(:disabled):hover,
+    .button-32:not(:disabled):focus {
+        outline: 0;
+        background: #f4e603;
+        box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+    }
+
+    .button-32:disabled {
+        filter: saturate(0.2) opacity(0.5);
+        -webkit-filter: saturate(0.2) opacity(0.5);
+        cursor: not-allowed;
+    }
+
+.createButton {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: #fff;
+    background-color: #1ED760;
+    height: 48px;
+}
+
+    .createButton : hover {
+        transform: scale(1.04);
+        background-color: #21e065;
+    }
+
+table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+footer {
+    background-color: white !important;
+}
