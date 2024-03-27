@@ -1,5 +1,5 @@
-﻿@using Newtonsoft.Json
-@model dynamicHotelRate
+﻿@model dynamicHotelRate
+<link rel="stylesheet" href="~/css/FilterRoomImage.css" asp-append-version="true" />
 @{
     var client = new HttpClient();
     ViewData["Title"] = "IndexRoom";
@@ -8,14 +8,6 @@
     var dateTo = myVar.TempBooking.DateTo;
     GrotHotel.myVar.Index = 0;
 }
-<style>
-    .p-1 {
-        max-width: calc(20.33% - 10px);
-        position: relative;
-        padding: 5px 10px !important;
-    }
-</style>
-
 <div class="m-3">
     <h4 class="text-center  bg-light">
         <small>@Model.Hotel.HotelRooms.Count() rooms available on </small>
@@ -26,7 +18,11 @@
     {
         <div class="d-flex m-3 rounded bg-white p-3" style="width:80%">
             <div class="col p-3">
-                <img src="~/Images/RoomImages/@item.RoomPicture" style="width:200px;" />
+                <img src="~/Images/RoomImages/@item.RoomPicture" class="room-image"/>
+                <div id="imageModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="fullImage">
+                </div>
             </div>
             <div class="col m-2 p-2" style="flex-grow:3">
                 <div class="row">
@@ -44,43 +40,40 @@
                                 <div class="row pt-2 d-block text-right">
                                     @for (int j = i * 3; j < Math.Min((i + 1) * 3, descriptions.Count); j++)
                                     {
-                                            <small>@descriptions[j]</small>
+                                        <small>@descriptions[j]</small>
                                     }
                                 </div>
                             }
                         }
                         <hr />
-                        <div class="priceContainerWrapper">
+                        <div class="priceContainerWrapper" id="style-1">
                             <div class="priceContainer">
                                 @for (DateTime date = dateFrom; date <= dateTo; date = date.AddDays(1))
                                 {
-                                    var currentRoomRate =(dynamicRoomRate) Model.RoomRates.ElementAtOrDefault(myVar.Index);
-                                    if (currentRoomRate != null  && currentRoomRate.DateFrom <= dateTo && currentRoomRate.DateTo >= dateFrom)
+                                    var currentRoomRate = (dynamicRoomRate?)Model.RoomRates.ElementAtOrDefault(myVar.Index);
+                                    if (currentRoomRate?.DateFrom <= dateTo && currentRoomRate?.DateTo >= dateFrom)
                                     {
-                                        var datelist = await myVar.ListOfBlackOutDates(currentRoomRate.RoomRateId);
-
-                                        var isBlackoutDate = datelist != null && datelist.BlackOutDates != null && datelist.BlackOutDates.Contains(date.ToString("yyyy-MM-dd"));
+                                        var isBlackoutDate = await myVar.IsBlackOutDateExist(currentRoomRate.RoomRateId, date);
 
                                         <div class="p-1">
-                                            <p style="margin:0px !important;">@date.ToString("dddd")</p>
+                                            <p style="margin:0px !important;">@date.ToString("ddd-dd")</p>
                                             @if (isBlackoutDate)
                                             {
                                                 <span>N/A</span>
                                             }
-
                                             else
                                             {
-                                                if (currentRoomRate.DateTo > date)
-                                                {
-                                                    <span style="transform: rotate(1deg);">@currentRoomRate?.Rate</span>
-                                                }
-                                                else
-                                                {
-                                                    GrotHotel.myVar.Index++;
-                                                    <span style="transform: rotate(1deg);">
+                                                <span style="transform: rotate(1deg);">
+                                                    @if (currentRoomRate.DateTo > date)
+                                                    {
+                                                        @currentRoomRate?.Rate
+                                                    }
+                                                    else
+                                                    {
+                                                        GrotHotel.myVar.Index++;
                                                         @Model.RoomRates.ElementAtOrDefault(myVar.Index)?.Rate
-                                                    </span>
-                                                }
+                                                    }
+                                                </span>
                                             }
                                         </div>
                                     }
@@ -95,4 +88,4 @@
         GrotHotel.myVar.Index++;
     }
 </div>
-
+<script src="~/js/ImageZoom.js"></script>

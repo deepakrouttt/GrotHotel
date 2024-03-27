@@ -121,6 +121,10 @@
       "PackagePath": "staticwebassets\\Images\\user-1.jpg"
     },
     {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\FilterRoomImage.css",
+      "PackagePath": "staticwebassets\\css\\FilterRoomImage.css"
+    },
+    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\Register.css",
       "PackagePath": "staticwebassets\\css\\Register.css"
     },
@@ -135,6 +139,10 @@
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\js\\ImageZoom.js",
+      "PackagePath": "staticwebassets\\js\\ImageZoom.js"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\js\\site.js",

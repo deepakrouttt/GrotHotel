@@ -63,14 +63,6 @@ body {
     border-color: lightgray;
 }
 
-.BookingImage {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    height: 400px;
-}
-
 .hotelFilterName {
     cursor: pointer !important;
 }
@@ -80,8 +72,8 @@ body {
     }
 
 .mask {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    height: 30em;
 }
 
 input[type="date"] {
@@ -114,6 +106,23 @@ input[type="date"] {
 .priceContainerWrapper {
     max-height: 100px;
     overflow-y: auto;
+
+}
+#style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar {
+    width: 7px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
 }
 
 .priceContainer {

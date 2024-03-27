@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VkvYGLNucTTVaJHfQ93lHz/5awYFlpE2xXW54AwdejI=",
+  "Hash": "Vz5n778ZWrdijOzl9iJ7py3UFsZ9WF04OgJ6YUE30xU=",
   "Source": "GrotHotel",
   "BasePath": "_content/GrotHotel",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GrotHotel.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\FilterRoomImage.css",
+      "SourceId": "GrotHotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\",
+      "BasePath": "_content/GrotHotel",
+      "RelativePath": "css/FilterRoomImage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\FilterRoomImage.css"
     },
     {
       "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\Register.css",
@@ -718,6 +737,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\user-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\js\\ImageZoom.js",
+      "SourceId": "GrotHotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\",
+      "BasePath": "_content/GrotHotel",
+      "RelativePath": "js/ImageZoom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ImageZoom.js"
     },
     {
       "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\js\\site.js",

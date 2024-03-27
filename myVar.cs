@@ -27,7 +27,7 @@ namespace GrotHotel
             return ListDiscription;
         }
 
-        public static async Task<BlackoutData> ListOfBlackOutDates(int id) {
+        public static async Task<bool> IsBlackOutDateExist(int id,DateTime date) {
 
             var url = "https://localhost:44309/api/HotelApi/GetBlackOutDate/";
             var client = new HttpClient();
@@ -36,7 +36,8 @@ namespace GrotHotel
             var content =  await response.Content.ReadAsStringAsync();
             var datelist = JsonConvert.DeserializeObject<BlackoutData>(content);
 
-            return datelist;
+            var IsBlackOutdate = datelist?.BlackOutDates?.Contains(date.ToString("yyyy-MM-dd")) ?? false;
+            return IsBlackOutdate;
         }
     }
 }
