@@ -1,9 +1,11 @@
 ﻿using GrotHotel.HotelRepository.IServices;
 using GrotHotel.Models;
+using GrotHotel.Models.Server_Model;
 using GrotHotelApi.Models;
 using Newtonsoft.Json;
 using System.Data;
 using System.Text;
+using static System.Net.WebRequestMethods;
 
 namespace GrotHotel.HotelRepository.Services
 {
@@ -30,6 +32,14 @@ namespace GrotHotel.HotelRepository.Services
                 }
             }
             return null;
+        }
+
+        public async Task<HttpResponseMessage> RegisterUser(User user)
+        {
+            var url = "https://localhost:44309/api/UserApi/Register";
+            StringContent stringContent = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+            var response =await  _client.PostAsync(url, stringContent);
+            return response;
         }
     }
 }

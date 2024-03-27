@@ -66,7 +66,7 @@
         $(".popBlackDate").show();
 
         $(".popBlackDate").prevAll().not(".popBlackDate").css("filter", "blur(3px)");
-
+        
         var RoomRateId = $(this).data("id");
         var dateFrom = $(this).closest('tr').find('.date-from').data('date');
         var dateTo = $(this).closest('tr').find('.date-to').data('date');

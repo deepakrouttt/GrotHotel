@@ -17,10 +17,10 @@
 <div class="m-3">
     @foreach (var item in Model)
     {
-        <div class="d-flex border m-3 rounded bg-white" style="width:80%">
+        <div class="d-flex m-3 rounded bg-white" style="width:80%">
             <div class="col p-3">
                 <a asp-action="FilterRooms" asp-route-id="@item.Hotel.HotelId">
-                    <img src="~/Images/HotelImages/@item.Hotel.HotelImage" style="width:200px;" />
+                    <img src="~/Images/HotelImages/@item.Hotel.HotelImage" class="w-100" />
                 </a>
             </div>
             <div class="col m-4" style="flex-grow:3">

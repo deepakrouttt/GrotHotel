@@ -4,10 +4,10 @@
     var HotelRoomId = ViewData["HotelRoomId"];
 }
 <div>
-    <h3 class="text-primary heading">Add Room Rate</h3>
+    <h3 class="text-primary heading">Add Rate of Room</h3>
     <hr />
 </div>
-<div class="bg-light p-1 rounded">
+<div class="bg-light p-3 rounded">
     <div class="col-md-4">
         <form asp-action="CreateRate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -79,7 +79,7 @@
                 <input asp-for="HotelRoomId" class="form-control" value="@HotelRoomId" type="hidden" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Add" class="button-7 m-1" />
+                <input type="submit" value="Add" class="button-7" />
 
             </div>
         </form>

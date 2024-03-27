@@ -61,5 +61,22 @@ namespace GrotHotel.Controllers
 
             return RedirectToAction("Login");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(User user)
+        {
+            var response = await _service.RegisterUser(user);
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
     }
 }

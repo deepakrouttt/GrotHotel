@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5i2XCyn0XUvKK/NcuECsnG0Rzde8gyDa3CEA1ep3lyM=",
+  "Hash": "VkvYGLNucTTVaJHfQ93lHz/5awYFlpE2xXW54AwdejI=",
   "Source": "GrotHotel",
   "BasePath": "_content/GrotHotel",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GrotHotel.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\Register.css",
+      "SourceId": "GrotHotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\",
+      "BasePath": "_content/GrotHotel",
+      "RelativePath": "css/Register.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Register.css"
     },
     {
       "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\site.css",

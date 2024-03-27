@@ -1,0 +1,63 @@
+﻿@model GrotHotel.Models.User
+<link rel="stylesheet" href="~/css/Register.css" asp-append-version="true" />
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+    <div class="main-w3layouts wrapper">
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <h1>Register Form</h1>
+                <form asp-action="Register" asp-controller="Validation" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Firstname" placeholder="Firstname" required="">
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                    <input asp-for="Lastname" placeholder="Lastname" required="">
+                    <input asp-for="Username" placeholder="Username" required="">
+                    <input asp-for="Roles" type="hidden" value="Consumer" />
+                    <input asp-for="Email" placeholder="Email" required="" />
+                    <input asp-for="Phone" placeholder="Phone" required="" />
+                    <input asp-for="Password" placeholder="Password" required="" type="password" />
+                    <div class="wthree-text">
+                        <label class="anim">
+                            <input type="checkbox" class="checkbox" required="" style="display:inline !important">
+                            I Agree To The Terms & Conditions
+                        </label>
+                        <div class="clear"> </div>
+                    </div>
+                    <input type="submit" value="Sign Up">
+                </form>
+                <p>Don't have an Account? <a asp-action="Login"> Login Now!</a></p>
+            </div>
+        </div>
+
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
