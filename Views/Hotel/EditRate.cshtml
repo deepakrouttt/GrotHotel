@@ -12,66 +12,72 @@
     <div class="col-md-4">
         <form asp-action="EditRate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="RoomRateId" class="form-control" type="hidden"/>
+            <div class="d-flex">
+                <div class="col">
+                    <div class="form-group">
+                        <input asp-for="RoomRateId" class="form-control" type="hidden" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateFrom" class="control-label"></label>
+                        <input asp-for="DateFrom" class="form-control" />
+                        <span asp-validation-for="DateFrom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateTo" class="control-label"></label>
+                        <input asp-for="DateTo" class="form-control" />
+                        <span asp-validation-for="DateTo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SingleRate" class="control-label"></label>
+                        <input asp-for="SingleRate" class="form-control" />
+                        <span asp-validation-for="SingleRate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DoubleRate" class="control-label"></label>
+                        <input asp-for="DoubleRate" class="form-control" />
+                        <span asp-validation-for="DoubleRate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TripleRate" class="control-label"></label>
+                        <input asp-for="TripleRate" class="form-control" />
+                        <span asp-validation-for="TripleRate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AdultRate" class="control-label"></label>
+                        <input asp-for="AdultRate" class="form-control" />
+                        <span asp-validation-for="AdultRate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="childRate" class="control-label"></label>
+                        <input asp-for="childRate" class="form-control" />
+                        <span asp-validation-for="childRate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col m-3" style="position:absolute;left:40%;">
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsException" /> @Html.DisplayName("Exception : 1 single rate + 1 child = 2 double rate")
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsExtraAdult" checked /> @Html.DisplayName("Extra Adult")
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsChildAllow" checked /> @Html.DisplayName("Is Child Allow")
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsSingleEqualDouble" /> @Html.DisplayName("Automatically add rate Single as Double")
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="DateFrom" class="control-label"></label>
-                <input asp-for="DateFrom" class="form-control" />
-                <span asp-validation-for="DateFrom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateTo" class="control-label"></label>
-                <input asp-for="DateTo" class="form-control" />
-                <span asp-validation-for="DateTo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SingleRate" class="control-label"></label>
-                <input asp-for="SingleRate" class="form-control" />
-                <span asp-validation-for="SingleRate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DoubleRate" class="control-label"></label>
-                <input asp-for="DoubleRate" class="form-control" />
-                <span asp-validation-for="DoubleRate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TripleRate" class="control-label"></label>
-                <input asp-for="TripleRate" class="form-control" />
-                <span asp-validation-for="TripleRate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AdultRate" class="control-label"></label>
-                <input asp-for="AdultRate" class="form-control" />
-                <span asp-validation-for="AdultRate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="childRate" class="control-label"></label>
-                <input asp-for="childRate" class="form-control" />
-                <span asp-validation-for="childRate" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsException" /> @Html.DisplayName("Exception : 1 single rate + 1 child = 2 double rate")
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsExtraAdult" checked /> @Html.DisplayName("Extra Adult")
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsChildAllow" checked /> @Html.DisplayName("Is Child Allow")
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsSingleEqualDouble" /> @Html.DisplayName("Automatically add rate Single as Double")
-                </label>
-            </div>
-            <div class="form-group">
-                <input asp-for="HotelRoomId" class="form-control" type="hidden"/>
+                <input asp-for="HotelRoomId" class="form-control" type="hidden" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="button-32 mt-1 w-25" />
@@ -85,5 +91,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

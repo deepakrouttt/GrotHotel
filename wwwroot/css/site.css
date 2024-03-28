@@ -39,10 +39,7 @@ body {
     z-index: 1000;
 }
 
-#ui-datepicker-div {
-    margin-top: 10px !important;
-    margin-left: -15px !important;
-}
+
 
 .AddBlackOutDate {
     position: absolute;

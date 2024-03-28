@@ -75,6 +75,7 @@
             dateFormat: 'yy-mm-dd',
             minDate: dateFrom,
             maxDate: dateTo,
+            multidate: true,
             onSelect: function (dateText, inst) {
                 $(this).find('.ui-state-active').css('background-color', 'yellow');
             }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vz5n778ZWrdijOzl9iJ7py3UFsZ9WF04OgJ6YUE30xU=",
+  "Hash": "9+hY5XhDXoqWlptA6A0CRihnBp5OTw/BippsHvjY+zM=",
   "Source": "GrotHotel",
   "BasePath": "_content/GrotHotel",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GrotHotel.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\DatePicker.css",
+      "SourceId": "GrotHotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\",
+      "BasePath": "_content/GrotHotel",
+      "RelativePath": "css/DatePicker.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DatePicker.css"
     },
     {
       "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\FilterRoomImage.css",
@@ -376,6 +395,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\HotelImages\\renest.png"
+    },
+    {
+      "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\pin_927667.png",
+      "SourceId": "GrotHotel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\",
+      "BasePath": "_content/GrotHotel",
+      "RelativePath": "Images/pin_927667.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\pin_927667.png"
     },
     {
       "Identity": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\RoomImages\\10to5.png",

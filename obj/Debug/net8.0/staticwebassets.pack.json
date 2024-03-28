@@ -117,8 +117,16 @@
       "PackagePath": "staticwebassets\\Images\\grothotel-high-resolution-logo-transparent.png"
     },
     {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\pin_927667.png",
+      "PackagePath": "staticwebassets\\Images\\pin_927667.png"
+    },
+    {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\Images\\user-1.jpg",
       "PackagePath": "staticwebassets\\Images\\user-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\DatePicker.css",
+      "PackagePath": "staticwebassets\\css\\DatePicker.css"
     },
     {
       "Id": "C:\\Users\\s12\\OneDrive\\Documents\\Deepak\\.Net\\GrotHotel\\wwwroot\\css\\FilterRoomImage.css",

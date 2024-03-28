@@ -8,8 +8,10 @@
     var dateTo = myVar.TempBooking.DateTo.ToString("ddd, MMM dd");
 }
 
-<h5 class="text-center">@Model.Count() hotels on @dateFrom - @dateTo for @adults Adults
-    @if (child != null && child!= 0 ) {
+<h5 class="text-center">
+    @Model.Count() hotels on @dateFrom - @dateTo for @adults Adults
+    @if (child != null && child != 0)
+    {
         <span>& @child children</span>
     }
 </h5>
@@ -27,20 +29,26 @@
                 <a asp-action="FilterRooms" asp-route-id="@item.Hotel.HotelId" class="homeFilter">
                     <h4>@item.Hotel.HotelName</h4>
                 </a>
-                <small>Address: @item.Hotel.Address</small>
+                <small>
+                    <img src="~/Images/pin_927667.png" />
+                    <a href="https://www.google.com/maps/search/?api=1&query=@item.Hotel.HotelName" target="_blank">
+                        @item.Hotel.Address
+                    </a>
+                </small>
                 <h6>Rating :<i data-star="@item.Hotel.Rating"></i></h6>
                 <h5>
                     Price <b>
                         <small style="color:red;">
                             @foreach (var room in item.RoomRates)
                             {
-                                @myVar.NumberFormeting(room.Rate);
+                                @myVar.NumberFormeting(room.Rate)
+                                ;
                                 break;
                             }/-
                         </small>
                     </b>
-                </h5><hr style="opacity:0.1;"/>
-                @foreach(var discription in myVar.DiscriptionFormat(item.Hotel.Description))
+                </h5><hr style="opacity:0.1;" />
+                @foreach (var discription in myVar.DiscriptionFormat(item.Hotel.Description))
                 {
                     <h6>@discription</h6>
                 }

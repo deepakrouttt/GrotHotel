@@ -5,6 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="~/css/DatePicker.css" />
 
 <div class="conatiner">
     <p class="text-end">
@@ -94,10 +95,12 @@
     <a asp-action="IndexRoom" asp-route-id="@Model.HotelId" class="btn btn-primary btn-sm">Back to Rooms</a>
 </div>
 <div class="popBlackDate" style="display:none;">
-    Add Date : <input type="text" id="datepicker" class="m-1">
+    Add Date : <input type="text" id="datepicker" class="m-1" placeholder="Select a date">
     <button type="button" class="closepopBlackOut" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
     <button class="AddBlackOutDate">Add</button>
     <button class="RemoveBlackOutDate">Remove</button>
 </div>
+
+

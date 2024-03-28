@@ -23,6 +23,7 @@ namespace GrotHotel
             options.LoginPath = "/Validation/Login";
             options.LogoutPath = "/Validation/Logout";
             options.AccessDeniedPath = options.LoginPath;
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
         });
             builder.Services.AddSession(options =>
             {
